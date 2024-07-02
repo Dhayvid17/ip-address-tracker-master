@@ -1,0 +1,344 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url(images/pattern-bg-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33vh;
+    text-align: center;
+}
+
+.title-box {
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+form input {
+    border: none;
+    border-bottom-left-radius: 13px;
+    border-top-left-radius: 13px;
+    cursor: pointer;
+    height: 7vh;
+    width: 450px;
+}
+
+form input::placeholder {
+    color: hsl(0, 0%, 59%);
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+button {
+    background-color: black;
+    background-image: url(images/icon-arrow.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-bottom-right-radius: 13px;
+    border-top-right-radius: 13px;
+    cursor: pointer;
+    height: 7vh;
+    transform: translate(-4px, 18px);
+    width: 45px
+}
+
+.info-box {
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    height: 20vh;
+    margin: 0 auto;
+    max-width: 1100px;
+    position: absolute;
+    transform: translate(135px, -60px);
+    width: 100%;
+    z-index: 100;
+}
+
+.ip-box,
+.location-box,
+.timezone-box {
+    /* flex: 1; */
+    position: relative;
+    width: 25%;
+    word-wrap: break-word;
+}
+
+.ip-info {
+    height: 13vh;
+    padding-left: 20px;
+}
+
+.ip-box::after,
+.location-box::after,
+.timezone-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 11vh;
+    width: 1px;
+    background-color: hsl(0, 0%, 59%);
+}
+
+.ip-box p,
+.location-box p,
+.timezone-info p,
+.isp-info p {
+    color: hsl(0, 0%, 59%);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.ip-info span,
+.location-info span,
+.timezone-info span,
+.isp-info span {
+    color: hsl(0, 0%, 17%);
+    font-size: 21px;
+    font-weight: 550;
+    display: inline-block;
+    letter-spacing: 1px;
+    margin-top: 8px;
+}
+
+.location-info {
+    height: 13vh;
+    line-height: 1em;
+    padding-left: 20px;
+}
+
+.location-info p:nth-child(3) {
+    color: hsl(0, 0%, 17%);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 7px;
+}
+
+.timezone-info {
+    height: 13vh;
+    padding-left: 20px;
+}
+
+.isp-box {
+    flex: 1;
+    width: 25%;
+    word-wrap: break-word;
+}
+
+.isp-info {
+    height: 13vh;
+    padding-left: 20px;
+}
+
+#map {
+    background-color: hsl(0, 0%, 59%);
+    height: 67vh;
+    z-index: 1;
+}
+
+
+/* PSUEDO CLASSES */
+
+form input:focus {
+    border: none;
+    outline: none;
+    padding-left: 15px;
+}
+
+/* RESPONSIVE STYLES */
+
+@media screen and (max-width: 1300px) {
+    .info-box {
+        max-width: 800px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .info-box {
+        max-width: 700px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .info-box {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .info-box {
+        max-width: 500px;
+    }
+
+    .ip-info span,
+    .location-info span,
+    .timezone-info span,
+    .isp-info span {
+        font-size: 18px;
+    }
+
+    .location-info p:nth-child(3) {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    header {
+        background-size: cover;
+        height: 40vh;
+    }
+
+    form input {
+        width: 355px;
+    }
+
+    .info-box {
+        flex-direction: column;
+        height: 36vh;
+        left: 36px;
+        max-width: 400px;
+        text-align: center;
+        transform: translate(135px, -90px);
+        width: 100%;
+    }
+
+    .ip-box,
+    .location-box,
+    .timezone-box,
+    .isp-box {
+        margin-top: 15px;
+        position: none;
+        width: 100%;
+    }
+
+    .ip-info,
+    .timezone-info,
+    .isp-info {
+        height: 6vh;
+        padding-left: 0px;
+    }
+
+    .location-info {
+        height: 6vh;
+        line-height: 0.6em;
+        padding-left: 0px;
+    }
+
+    .location-info p:nth-child(3) {
+        display: inline;
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    .ip-box::after,
+    .location-box::after,
+    .timezone-box::after {
+        content: none;
+    }
+
+    .ip-box p,
+    .location-box p,
+    .timezone-info p,
+    .isp-info p {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    .ip-info span,
+    .location-info span,
+    .timezone-info span,
+    .isp-info span {
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    #map {
+        height: 100vh;
+    }
+
+    @media screen and (max-width: 700px) {
+        .info-box {
+            left: 25px;
+            max-width: 350px;
+        }
+    }
+
+    @media screen and (max-width: 650px) {
+        .info-box {
+            max-width: 350px;
+            transform: translate(110px, -60px);
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .info-box {
+            left: 0px;
+            max-width: 350px;
+            transform: translate(100px, -60px);
+        }
+    }
+
+    @media screen and (max-width: 550px) {
+        .info-box {
+            left: 0px;
+            max-width: 350px;
+            transform: translate(90px, -60px);
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .info-box {
+            max-width: 330px;
+            transform: translate(80px, -60px);
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        form input {
+            width: 330px;
+        }
+
+        .info-box {
+            max-width: 330px;
+            transform: translate(50px, -60px);
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        form input {
+            width: 300px;
+        }
+
+        .info-box {
+            max-width: 330px;
+            transform: translate(20px, -60px);
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        form input {
+            width: 300px;
+        }
+
+        .info-box {
+            max-width: 342px;
+            transform: translate(15px, -60px);
+        }
+    }
+
+
+}
